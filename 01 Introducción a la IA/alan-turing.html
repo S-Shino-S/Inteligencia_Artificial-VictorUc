@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alan Turing — Semblanza</title>
+  <style>
+    :root {
+      --navy: #0f2c59;
+      --navy-dark: #0a1f40;
+      --accent: #1b6ca8;
+      --gold: #e8b93a;
+      --slate: #2c3e50;
+      --muted: #5d6d7e;
+      --paper: #f6f8fb;
+      --white: #ffffff;
+      --line: #d5dee8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Georgia", "Times New Roman", serif;
+      background: var(--paper);
+      color: var(--slate);
+      line-height: 1.65;
+    }
+
+    header {
+      background: var(--navy-dark);
+      color: var(--white);
+      padding: 3.2rem 1.5rem 2.6rem;
+      border-bottom: 6px solid var(--gold);
+    }
+
+    header .wrap,
+    main,
+    footer .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .kicker {
+      font-family: "Calibri", "Helvetica Neue", sans-serif;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    header p {
+      margin-top: 0.75rem;
+      font-size: 1.15rem;
+      color: #c5d0dc;
+      max-width: 36em;
+    }
+
+    main { padding: 2.4rem 1.5rem 3rem; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.1rem;
+      margin-bottom: 2.4rem;
+    }
+
+    figure {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(15, 44, 89, 0.08);
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      object-position: center top;
+      background: #1a1a1a;
+    }
+
+    figcaption {
+      font-family: "Calibri", "Helvetica Neue", sans-serif;
+      font-size: 0.82rem;
+      color: var(--muted);
+      padding: 0.75rem 0.9rem 0.95rem;
+    }
+
+    article {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 2rem 2.1rem 2.2rem;
+      box-shadow: 0 8px 24px rgba(15, 44, 89, 0.06);
+    }
+
+    article h2 {
+      font-size: 1.45rem;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .rule {
+      width: 3.2rem;
+      height: 4px;
+      background: var(--gold);
+      margin: 0 0 1.2rem;
+    }
+
+    article p { margin-bottom: 1rem; text-align: justify; }
+
+    article p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--navy);
+      color: #c5d0dc;
+      padding: 1.2rem 1.5rem;
+      font-family: "Calibri", "Helvetica Neue", sans-serif;
+      font-size: 0.85rem;
+    }
+
+    footer a { color: var(--gold); }
+
+    @media (max-width: 800px) {
+      .gallery { grid-template-columns: 1fr; }
+      figure img { height: 380px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <p class="kicker">Curso de Inteligencia Artificial · 01 Introducción</p>
+      <h1>Alan Mathison Turing</h1>
+      <p>1912–1954 · matemático, lógico y pionero de la computación y de la inteligencia artificial.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="gallery" aria-label="Fotografías de Alan Turing">
+      <figure>
+        <img src="imagenes/turing-16.jpg" alt="Alan Turing a los 16 años, fotografía de pasaporte">
+        <figcaption>Hacia 1928–1929. Fotografía de pasaporte a los 16 años. Wikimedia Commons (dominio público).</figcaption>
+      </figure>
+      <figure>
+        <img src="imagenes/turing-princeton.jpg" alt="Alan Turing en la Universidad de Princeton en 1936">
+        <figcaption>1936. En Princeton, donde obtuvo su doctorado. Archivos de la Universidad de Princeton / Wikimedia Commons.</figcaption>
+      </figure>
+      <figure>
+        <img src="imagenes/turing-1951.jpg" alt="Retrato de Alan Turing en 1951">
+        <figcaption>1951. Retrato de madurez, en los años del laboratorio de Manchester. Wikimedia Commons.</figcaption>
+      </figure>
+    </section>
+
+    <article>
+      <h2>Semblanza</h2>
+      <div class="rule" aria-hidden="true"></div>
+      <p>
+        Alan Mathison Turing nació el 23 de junio de 1912 en Londres. Estudió matemáticas en King’s College, Cambridge, y se doctoró en Princeton. En 1936 publicó <em>On Computable Numbers</em>, donde definió lo que hoy llamamos <strong>máquina de Turing</strong>: un modelo abstracto de cálculo que fija, con rigor, qué significa que un procedimiento sea computable. Con ello sentó una de las bases teóricas de la informática.
+      </p>
+      <p>
+        Durante la Segunda Guerra Mundial trabajó en Bletchley Park. En la cabaña 8 contribuyó de manera decisiva a descifrar el código naval Enigma. Ese trabajo, largo tiempo secreto, acortó la guerra y salvó incontables vidas. Después diseñó el Automatic Computing Engine (ACE) y participó en las primeras computadoras de Manchester, uniendo teoría y máquina real.
+      </p>
+      <p>
+        En 1950 escribió <em>Computing Machinery and Intelligence</em>, el ensayo que abre muchas introducciones a la inteligencia artificial. Allí reemplazó la pregunta «¿pueden pensar las máquinas?» por el <strong>juego de la imitación</strong> —el test de Turing— y defendió que una computadora digital, con memoria, programa y aprendizaje, podría algún día sostener una conversación indistinguible de la humana.
+      </p>
+      <p>
+        También investigó la morfogénesis: cómo patrones biológicos (manchas, espirales) pueden surgir de leyes químicas simples. En 1952 fue condenado por su homosexualidad, entonces delito en el Reino Unido, y sometido a castración química. Murió el 7 de junio de 1954 en Wilmslow, a los 41 años; la investigación oficial concluyó suicidio por cianuro. Recibió indulto póstumo en 2013. El premio más prestigioso de la computación lleva su nombre.
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      Curso de Inteligencia Artificial · Fotografías procedentes de
+      <a href="https://commons.wikimedia.org/wiki/Category:Alan_Turing">Wikimedia Commons</a>.
+    </div>
+  </footer>
+</body>
+</html>
