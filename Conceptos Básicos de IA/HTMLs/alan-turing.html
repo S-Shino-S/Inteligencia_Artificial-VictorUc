@@ -82,10 +82,11 @@
     figure img {
       display: block;
       width: 100%;
-      height: 320px;
-      object-fit: cover;
-      object-position: center top;
-      background: #1a1a1a;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: contain;
+      object-position: center center;
+      background: #ececec;
     }
 
     figcaption {
@@ -132,7 +133,7 @@
 
     @media (max-width: 800px) {
       .gallery { grid-template-columns: 1fr; }
-      figure img { height: 380px; }
+      figure img { aspect-ratio: 3 / 4; }
     }
   </style>
 </head>
@@ -148,15 +149,15 @@
   <main>
     <section class="gallery" aria-label="Fotografías de Alan Turing">
       <figure>
-        <img src="imagenes/turing-16.jpg" alt="Alan Turing a los 16 años, fotografía de pasaporte">
+        <img src="../images/turing-16.jpg" alt="Alan Turing a los 16 años, fotografía de pasaporte">
         <figcaption>Hacia 1928–1929. Fotografía de pasaporte a los 16 años. Wikimedia Commons (dominio público).</figcaption>
       </figure>
       <figure>
-        <img src="imagenes/turing-princeton.jpg" alt="Alan Turing en la Universidad de Princeton en 1936">
+        <img src="../images/turing-princeton.jpg" alt="Alan Turing en la Universidad de Princeton en 1936">
         <figcaption>1936. En Princeton, donde obtuvo su doctorado. Archivos de la Universidad de Princeton / Wikimedia Commons.</figcaption>
       </figure>
       <figure>
-        <img src="imagenes/turing-1951.jpg" alt="Retrato de Alan Turing en 1951">
+        <img src="../images/turing-1951.jpg" alt="Retrato de Alan Turing en 1951">
         <figcaption>1951. Retrato de madurez, en los años del laboratorio de Manchester. Wikimedia Commons.</figcaption>
       </figure>
     </section>
