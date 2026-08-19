@@ -1,0 +1,21 @@
+# Small table whose ID3 tree matches the lecture restaurant example.
+# Quote Yes/No/None — YAML would otherwise read them as booleans/null.
+name: Wait for a table (AIMA-style)
+
+target: Wait
+attributes: [Patrons, Hungry, Friday]
+
+examples:
+  - {Patrons: "None", Hungry: "Yes", Friday: "No",  Wait: "No"}
+  - {Patrons: "None", Hungry: "No",  Friday: "Yes", Wait: "No"}
+  - {Patrons: "Some", Hungry: "Yes", Friday: "No",  Wait: "Yes"}
+  - {Patrons: "Some", Hungry: "No",  Friday: "Yes", Wait: "Yes"}
+  - {Patrons: "Full", Hungry: "No",  Friday: "Yes", Wait: "No"}
+  - {Patrons: "Full", Hungry: "No",  Friday: "No",  Wait: "No"}
+  - {Patrons: "Full", Hungry: "Yes", Friday: "No",  Wait: "No"}
+  - {Patrons: "Full", Hungry: "Yes", Friday: "Yes", Wait: "Yes"}
+
+query:
+  Patrons: "Full"
+  Hungry: "Yes"
+  Friday: "Yes"

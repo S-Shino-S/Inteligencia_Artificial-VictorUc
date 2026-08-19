@@ -1,0 +1,50 @@
+# AIMA burglary–earthquake–alarm network (boolean).
+name: Alarm (AIMA)
+
+variables:
+  - id: B
+    label: Burglary
+  - id: E
+    label: Earthquake
+  - id: A
+    label: Alarm
+  - id: J
+    label: JohnCalls
+  - id: M
+    label: MaryCalls
+
+structure:
+  B: []
+  E: []
+  A: [B, E]
+  J: [A]
+  M: [A]
+
+cpts:
+  B: 0.001
+  E: 0.002
+  A:
+    - when: {B: true, E: true}
+      p_true: 0.95
+    - when: {B: true, E: false}
+      p_true: 0.94
+    - when: {B: false, E: true}
+      p_true: 0.29
+    - when: {B: false, E: false}
+      p_true: 0.001
+  J:
+    - when: {A: true}
+      p_true: 0.90
+    - when: {A: false}
+      p_true: 0.05
+  M:
+    - when: {A: true}
+      p_true: 0.70
+    - when: {A: false}
+      p_true: 0.01
+
+query:
+  variable: B
+  evidence:
+    J: true
+    M: true

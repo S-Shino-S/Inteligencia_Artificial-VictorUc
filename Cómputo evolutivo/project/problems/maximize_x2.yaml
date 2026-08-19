@@ -1,0 +1,23 @@
+name: Maximize x² on {0 … 31}
+
+sense: maximize
+function: x_squared
+
+variables:
+  - id: x
+    bits: 5
+    low: 0
+    high: 31
+    kind: integer
+
+population: 16
+generations: 12
+p_crossover: 0.8
+p_mutation: 0.05
+selection: roulette
+elitism: 1
+seed: 1
+
+optimum:
+  x: [31]
+  f: 961

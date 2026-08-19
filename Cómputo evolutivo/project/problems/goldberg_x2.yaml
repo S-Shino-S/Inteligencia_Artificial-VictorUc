@@ -1,0 +1,39 @@
+name: Goldberg x² (lecture)
+
+sense: maximize
+function: x_squared
+
+variables:
+  - id: x
+    bits: 5
+    low: 0
+    high: 31
+    kind: integer
+
+population: 4
+generations: 1
+p_crossover: 1.0
+p_mutation: 0.0
+selection: roulette
+elitism: 0
+seed: 1
+
+# Generation 0 from Goldberg 1989. 02_one_generation.py replays the
+# textbook mating pool and cut points; 03_run_ga.py ignores replay.
+initial:
+  - "01101"
+  - "11000"
+  - "01000"
+  - "10011"
+
+replay:
+  mating_pool:
+    - "01101"
+    - "11000"
+    - "11000"
+    - "10011"
+  cuts: [4, 2]
+
+optimum:
+  x: [31]
+  f: 961

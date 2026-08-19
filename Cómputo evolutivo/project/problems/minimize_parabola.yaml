@@ -1,0 +1,24 @@
+name: Minimize (x − 3)²
+
+sense: minimize
+function: shifted_parabola
+
+variables:
+  - id: x
+    bits: 12
+    low: -2
+    high: 8
+    kind: real
+
+population: 24
+generations: 30
+p_crossover: 0.8
+p_mutation: 0.02
+selection: tournament
+tournament_k: 3
+elitism: 1
+seed: 3
+
+optimum:
+  x: [3]
+  f: 0

@@ -1,0 +1,30 @@
+name: Minimize Himmelblau (two variables)
+
+sense: minimize
+function: himmelblau
+
+variables:
+  - id: x
+    bits: 10
+    low: -5
+    high: 5
+    kind: real
+  - id: y
+    bits: 10
+    low: -5
+    high: 5
+    kind: real
+
+population: 40
+generations: 40
+p_crossover: 0.85
+p_mutation: 0.02
+selection: tournament
+tournament_k: 3
+elitism: 2
+seed: 11
+
+# Four global minima with f = 0; any one is a success.
+optimum:
+  x: [3, 2]
+  f: 0

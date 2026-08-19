@@ -1,2 +1,8 @@
 .DS_Store
 **/.DS_Store
+
+# Python virtual environments (any depth)
+venv/
+**/venv/
+.venv/
+**/.venv/

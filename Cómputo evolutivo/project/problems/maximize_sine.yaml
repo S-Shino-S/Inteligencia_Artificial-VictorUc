@@ -1,0 +1,25 @@
+name: Maximize x · sin(x)
+
+sense: maximize
+function: sine_peak
+
+variables:
+  - id: x
+    bits: 12
+    low: 0
+    high: 12.5663706144   # 4π
+    kind: real
+
+population: 30
+generations: 25
+p_crossover: 0.8
+p_mutation: 0.03
+selection: tournament
+tournament_k: 3
+elitism: 1
+seed: 5
+
+# Global max on [0, 4π] is near x ≈ 7.978, f ≈ 7.917
+optimum:
+  x: [7.978]
+  f: 7.917
