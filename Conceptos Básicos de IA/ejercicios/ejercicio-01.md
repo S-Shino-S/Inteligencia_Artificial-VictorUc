@@ -26,6 +26,6 @@ Para cada una indica:
 
 ## Criterios
 
-- Deben ser **cinco** aplicaciones distintas.
+- Deben ser **tres** aplicaciones distintas.
 - El nombre de cada app debe ser explícito.
 - La explicación del uso debe ser concreta (no basta con escribir «la uso para todo»).
