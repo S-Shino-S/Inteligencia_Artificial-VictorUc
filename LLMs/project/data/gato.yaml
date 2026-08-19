@@ -1,0 +1,31 @@
+name: Lecture «el gato»
+vocab: [el, gato, come, "."]
+n: 3
+probe: [el, gato]
+stop: "."
+seed: 0
+lr: 0.5
+epochs: 400
+max_new: 8
+temperature: 1.0
+
+# Three times «el gato come .» and once «el gato .» — program 01's table.
+corpus:
+  - el gato come .
+  - el gato come .
+  - el gato come .
+  - el gato .
+
+# Slide 14: z for come / . / el
+logits_demo:
+  labels: [come, ".", el]
+  z: [2.0, 0.0, 0.0]
+
+# Slide 11: come looks at gato. h = (0.2, 1.7)
+attention:
+  tokens: [el, gato, come]
+  alpha: [0.1, 0.8, 0.1]
+  values:
+    - [1.0, 0.0]
+    - [0.0, 2.0]
+    - [1.0, 1.0]

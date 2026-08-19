@@ -1,0 +1,16 @@
+name: A slightly larger yard
+vocab: [el, gato, perro, come, duerme, "."]
+n: 3
+probe: [el, gato]
+stop: "."
+seed: 1
+lr: 0.5
+epochs: 400
+max_new: 8
+temperature: 1.0
+
+corpus:
+  - el gato come .
+  - el gato come .
+  - el perro come .
+  - el gato duerme .
