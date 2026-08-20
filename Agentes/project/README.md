@@ -2,7 +2,7 @@
 
 Classic *Hunt the Wumpus* environment (Russell & Norvig, AIMA ch. 2 and 7) plus five agent programs that all talk to the same world.
 
-There are no dirty squares. Percepts are `[Stench, Breeze, Glitter, Bump, Scream]`. Actions are `Forward`, `TurnLeft`, `TurnRight`, `Grab`, `Shoot`, `Climb`.
+Percepts are `[Stench, Breeze, Glitter, Bump, Scream]`. Actions are `Forward`, `TurnLeft`, `TurnRight`, `Grab`, `Shoot`, `Climb`.
 
 Coordinates are **1-based**. `(1, 1)` is the bottom-left cave, as in AIMA.
 
