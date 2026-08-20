@@ -51,6 +51,10 @@ python 05_utility_based_agent.py
 python 06_learning_agent.py --episodes 1500
 ```
 
+With `--mode keyboard`, control the agent from the terminal:
+
+Keys: `f`=Forward  `l`=TurnLeft  `r`=TurnRight  `g`=Grab  `s`=Shoot  `c`=Climb  `q`=Quit
+
 Useful flags: `--config PATH`, `--quiet`, `--delay 0.2`.
 
 ## Config files
