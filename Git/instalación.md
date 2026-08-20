@@ -1,32 +1,46 @@
-Aquí tienes una guía rápida en PowerShell para instalar Git en Windows:
+# Instalación de Git en Windows con PowerShell
 
-Abre PowerShell como administrador
+Guía rápida para instalar Git en Windows usando PowerShell.
 
-Inicio → busca “PowerShell” → clic derecho → Ejecutar como administrador.
-Verifica si ya tienes winget disponible
+## 1. Abre PowerShell como administrador
 
-PowerShell
+Desde el menú de inicio, busca `PowerShell`, haz clic derecho y selecciona **Ejecutar como administrador**.
+
+## 2. Verifica si `winget` está disponible
+
+```powershell
 winget --version
-Instala Git con winget
+```
 
-PowerShell
+## 3. Instala Git con `winget`
+
+```powershell
 winget install --id Git.Git -e --source winget
-Espera a que termine la instalación
+```
 
-Acepta prompts si aparecen.
-Cierra y vuelve a abrir PowerShell
+Espera a que termine la instalación y acepta los prompts si aparecen.
 
-Para refrescar variables de entorno (PATH).
-Verifica que Git quedó instalado
+## 4. Cierra y vuelve a abrir PowerShell
 
-PowerShell
+Esto refresca las variables de entorno, como `PATH`.
+
+## 5. Verifica que Git quedó instalado
+
+```powershell
 git --version
-(Opcional) Configura tu identidad global de Git
+```
 
-PowerShell
+## 6. Configura tu identidad global de Git
+
+Este paso es opcional, pero recomendado para registrar tu nombre y correo en los commits.
+
+```powershell
 git config --global user.name "Tu Nombre"
 git config --global user.email "tu@email.com"
-(Opcional) Revisa la configuración
+```
 
-PowerShell
+## 7. Revisa la configuración
+
+```powershell
 git config --list
+```
