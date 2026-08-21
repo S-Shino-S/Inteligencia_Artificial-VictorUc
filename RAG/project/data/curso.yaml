@@ -1,0 +1,74 @@
+name: Notas del curso de IA
+
+# Cómo se preparan e indexan los documentos.
+chunk_words: 30      # palabras por fragmento (chunk)
+overlap: 6           # palabras compartidas entre chunks vecinos
+top_k: 2             # cuántos chunks recupera cada consulta
+min_score: 0.05      # coseno mínimo para no abstenerse
+
+# Palabras vacías: no aportan significado, se ignoran al vectorizar.
+stopwords: [el, la, los, las, un, una, unos, unas, de, del, a, al, en, y, o, u,
+  que, se, su, sus, lo, es, son, como, para, por, con, no, si, entre, sobre,
+  cada, ese, esa, esos, esas, este, esta, estos, estas, muy, dos, más, mas]
+
+# Cada documento es una fuente distinta con su texto.
+documents:
+  - title: Embeddings
+    source: llms.pptx
+    text: >
+      Un embedding convierte texto en un vector de números. Textos con
+      significado parecido quedan cerca en el espacio vectorial. El modelo
+      aprende estas representaciones a partir de mucho texto. Cada dimensión
+      no tiene una interpretación humana directa.
+
+  - title: Similitud del coseno
+    source: rag.pptx
+    text: >
+      La similitud del coseno mide el ángulo entre dos vectores. Un valor
+      cercano a uno indica que los textos son muy similares. La búsqueda
+      semántica compara el vector de la consulta con los vectores guardados.
+
+  - title: Base de datos vectorial
+    source: rag.pptx
+    text: >
+      Una base de datos vectorial guarda vectores junto con el texto original
+      y sus metadatos. Un índice de vecinos cercanos evita comparar la consulta
+      contra todos los vectores uno por uno. Ejemplos de índices son hnsw e ivf.
+
+  - title: Chunking
+    source: rag.pptx
+    text: >
+      Antes de indexar se divide cada documento en fragmentos llamados chunks.
+      Un chunk demasiado grande recupera ruido y uno demasiado pequeño pierde
+      contexto. El solapamiento ayuda cuando la respuesta cruza la frontera
+      entre fragmentos.
+
+  - title: Qué es RAG
+    source: rag.pptx
+    text: >
+      RAG significa generación aumentada por recuperación. El sistema calcula
+      el embedding de la pregunta y recupera los chunks más similares. Esos
+      fragmentos se colocan en el prompt como contexto para el modelo de
+      lenguaje. El modelo redacta la respuesta usando solo esa evidencia.
+
+  - title: Evaluación
+    source: rag.pptx
+    text: >
+      Para evaluar la recuperación se usan métricas como recall y precisión en
+      los primeros k resultados. Para evaluar la respuesta se revisa la
+      factualidad y el uso de citas. Si no hay evidencia suficiente el sistema
+      debe abstenerse en lugar de inventar.
+
+# Consultas de ejemplo (programas 03 y 04).
+queries:
+  - ¿cómo sabe RAG qué fragmentos enviar al modelo de lenguaje?
+  - ¿qué mide la similitud del coseno?
+  - ¿qué guarda una base de datos vectorial?
+  - ¿cómo se cocina una paella valenciana?
+
+# Textos sueltos para comparar en el programa 01.
+# Los dos primeros comparten palabras (coseno alto); el tercero no (coseno 0).
+examples:
+  - el coseno mide la similitud entre vectores
+  - la similitud del coseno compara vectores guardados
+  - cómo se cocina una paella valenciana
