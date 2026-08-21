@@ -51,4 +51,6 @@ Las presentaciones están en `Unidad/PPTXs/`. Los laboratorios, en `Unidad/proje
 No hace falta GPU: todo cabe en una tabla o
 en una matriz pequeña que se puede calcular a mano.
 
+## Ask RAG with deep wiki
+
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/victoruccetina/inteligencia-artificial)
