@@ -1,0 +1,57 @@
+# Configuración del GAN de juguete (todo en 1 dimensión).
+#
+# El objetivo es aprender a generar números que sigan la distribución `target`.
+# Como todo es 1D, puedes verificar el resultado a ojo con los histogramas.
+
+seed: 7
+
+# Distribución real que el generador debe imitar.
+# kind: gaussian  -> usa mean y std
+# kind: mixture   -> usa components (lista de {mean, std, weight})
+target:
+  kind: gaussian
+  mean: 4.0
+  std: 0.6
+  # Ejemplo de mezcla (descomenta y pon kind: mixture):
+  # components:
+  #   - {mean: 2.0, std: 0.3, weight: 1.0}
+  #   - {mean: 6.0, std: 0.3, weight: 1.0}
+
+# Ruido de entrada del generador (el "espacio latente" z).
+noise:
+  dim: 2
+  kind: uniform     # uniform en [-1, 1], o gaussian N(0, 1)
+
+# Tamaño de las capas ocultas de cada red.
+generator:
+  hidden: [16, 16]
+discriminator:
+  hidden: [16, 16]
+
+# Entrenamiento adversario.
+training:
+  steps: 3000
+  batch: 32
+  lr_g: 0.001
+  lr_d: 0.002
+  d_steps: 2        # pasos de D por cada paso de G (D debe ir "por delante")
+  report_every: 300
+
+# Rango de los histogramas ASCII y muestreo de evaluación.
+histogram:
+  bins: 25
+  low: 0.0
+  high: 8.0
+eval_samples: 2000
+
+# Objetivo 2D para el programa 05 (dispersión ASCII).
+# kind: ring  -> un anillo de radio `radius` con grosor `noise_std`
+# kind: blobs -> varias gaussianas en `centers` con desviación `blob_std`
+target2d:
+  kind: ring
+  radius: 2.0
+  noise_std: 0.12
+  window: [-3.2, 3.2]     # ventana del gráfico y de la estandarización
+  # Para kind: blobs:
+  # centers: [[-1.5, -1.5], [1.5, 1.5], [-1.5, 1.5], [1.5, -1.5]]
+  # blob_std: 0.22
