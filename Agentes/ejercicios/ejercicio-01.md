@@ -93,6 +93,7 @@ python 02_simple_reflex_agent.py --config config/mi_cueva_4x4.yaml
 python 03_model_based_agent.py  --config config/mi_cueva_4x4.yaml
 python 04_goal_based_agent.py   --config config/mi_cueva_4x4.yaml
 python 05_utility_based_agent.py --config config/mi_cueva_4x4.yaml
+python 06_learning_agent.py --episodes 1500 --config config/mi_cueva_4x4.yaml
 ```
 
 ## Criterios de aceptación
