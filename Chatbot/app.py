@@ -89,8 +89,9 @@ def reply_from_model(prompt: str) -> str:
 
 prompt = st.chat_input("Escribe un mensaje")
 if prompt:
+    busca_contexto(prompt)
     st.session_state.messages.append({"role": "user", "content": prompt})
-    with st.spinner("Thinking..."):
+    with st.spinner("Pensando..."):
         try:
             reply = reply_from_model(prompt)
         except Exception as exc:
