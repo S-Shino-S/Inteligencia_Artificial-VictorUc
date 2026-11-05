@@ -1,0 +1,33 @@
+name: Wet grass (lecture example)
+
+variables:
+  - id: L
+    label: Rain
+  - id: A
+    label: Sprinkler
+  - id: P
+    label: WetGrass
+
+structure:
+  L: []
+  A: []
+  P: [L, A]
+
+# Roots: P(X = true).  Nodes with parents: one row per parent assignment.
+cpts:
+  L: 0.20
+  A: 0.10
+  P:
+    - when: {L: true, A: true}
+      p_true: 0.99
+    - when: {L: true, A: false}
+      p_true: 0.90
+    - when: {L: false, A: true}
+      p_true: 0.80
+    - when: {L: false, A: false}
+      p_true: 0.05
+
+query:
+  variable: L
+  evidence:
+    P: true

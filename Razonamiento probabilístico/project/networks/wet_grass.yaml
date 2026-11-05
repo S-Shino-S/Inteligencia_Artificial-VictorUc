@@ -1,29 +1,29 @@
-name: Wet grass (lecture example)
+name: AI governance scenario
 
 variables:
   - id: L
-    label: Rain
+    label: AI governs society
   - id: A
-    label: Sprinkler
+    label: Society delegates decisions to AI
   - id: P
-    label: WetGrass
+    label: Critical decisions are automated
 
 structure:
   L: []
   A: []
   P: [L, A]
 
-# Roots: P(X = true).  Nodes with parents: one row per parent assignment.
+# Roots: P(X = true). Nodes with parents: one row per parent assignment.
 cpts:
-  L: 0.20
-  A: 0.10
+  L: 0.15
+  A: 0.30
   P:
     - when: {L: true, A: true}
       p_true: 0.99
     - when: {L: true, A: false}
-      p_true: 0.90
+      p_true: 0.85
     - when: {L: false, A: true}
-      p_true: 0.80
+      p_true: 0.75
     - when: {L: false, A: false}
       p_true: 0.05
 
